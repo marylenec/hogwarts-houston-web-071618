@@ -29,7 +29,7 @@ class App extends React.Component {
       <div className="App">
           < Nav />
           < Filters greaseFilter={this.state.greaseFilter} onChange={this.handleChange}/>
-          < HogList hogs={hogs} />
+          < HogList hogs={hogs} greaseFilter={this.state.greaseFilter}/>
       </div>
     )
   }

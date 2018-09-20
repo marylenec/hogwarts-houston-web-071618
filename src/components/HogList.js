@@ -12,17 +12,20 @@ import Hog from './Hog'
 class HogList extends React.Component {
 
   generateTiles = () => {
-
-    return hogs.map( hog => {
+    let selectedHogs = hogs
+    if(this.props.greaseFilter==true) {
+      selectedHogs = hogs.filter( hog => hog.greased == true)
+    }
+    return selectedHogs.map( hog => {
         return <Hog {...hog} />
     })
   }
 
-  renderOnlyGreased = () => {
-    console.log(hogs)
-    return hogs.filter( hog => hog.greased == true)
-    console.log(hogs)
-  }
+  // renderOnlyGreased = () => {
+  //   console.log(hogs)
+  //   return h
+  //   console.log(hogs)
+  // }
 
 
 // class component must render(){} something.
